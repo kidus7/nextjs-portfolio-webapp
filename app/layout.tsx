@@ -31,6 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={inter.className}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
