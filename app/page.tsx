@@ -92,6 +92,12 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
             className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+            onClick={() => {
+              const aboutSection = document.getElementById("about");
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
