@@ -1,15 +1,17 @@
-import './globals.css';
-import { Inter } from 'next/font/google';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Mignot Yirsaw Adane | Marketing Professional',
-  description: 'Creative Marketing Enthusiast specializing in Branding & Strategy. View my portfolio and experience.',
-  manifest: '/manifest.json',
-  themeColor: '#ffffff',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  title: "Mignot Yirsaw Adane | Marketing Professional",
+  description:
+    "Creative Marketing Enthusiast specializing in Branding & Strategy. View my portfolio and experience.",
+  manifest: "/manifest.json",
+  themeColor: "#ffffff",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 interface RootLayoutProps {
@@ -28,10 +30,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="apple-mobile-web-app-title" content="Mignot Yirsaw" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
-      <body
-        className={inter.className}>
+      <body className={inter.className}>
         {children}
         <SpeedInsights />
+        <ServiceWorkerRegister /> {/* Load service worker separately */}
       </body>
     </html>
   );
