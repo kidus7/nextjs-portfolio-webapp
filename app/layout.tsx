@@ -11,7 +11,11 @@ export const metadata = {
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>

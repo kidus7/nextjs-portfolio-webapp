@@ -11,13 +11,16 @@ export default function Home() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
   };
 
   const scrollToContact = () => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const downloadCV = () => {
@@ -237,7 +240,7 @@ export default function Home() {
                   </label>
                   <textarea
                     id="message"
-                    rows="4"
+                    rows={4}
                     className="w-full p-3 rounded-md border border-input bg-background"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
