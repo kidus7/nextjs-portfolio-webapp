@@ -265,8 +265,8 @@ export default function Home() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-primary" />
-                <a href="mailto:mignotyirsaw7@gmail.com" className="text-muted-foreground hover:text-primary">
-                  mignotyirsaw7@gmail.com
+                <a href="mailto:mignotyirsaw22@gmail.com" className="text-muted-foreground hover:text-primary">
+                  mignotyirsaw22@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-4">

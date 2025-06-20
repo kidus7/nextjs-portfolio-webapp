@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin, ArrowDown, Send } from 'lucide-react';
+import BlogsSection from '@/components/blog/BlogsSection';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -9,7 +10,14 @@ export default function Home() {
     email: '',
     message: ''
   });
+  const [posts, setPosts] = useState([]);
 
+   useEffect(() => {
+    fetch('/api/blogs')
+      .then(res => res.json())
+      .then(data => setPosts(data))
+      .catch(err => console.error('Failed to load blogs', err));
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -124,6 +132,8 @@ export default function Home() {
         </div>
       </section>
 
+      <BlogsSection posts={posts} />
+
       {/* Contact Section */}
       <section className="py-20 bg-background" id="contact">
         <div className="container mx-auto px-6">
@@ -182,8 +192,8 @@ export default function Home() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-primary" />
-                <a href="mailto:mignotyirsaw7@gmail.com" className="text-muted-foreground hover:text-primary">
-                mignotyirsaw7@gmail.com
+                <a href="mailto:mignotyirsaw22@gmail.com" className="text-muted-foreground hover:text-primary">
+                mignotyirsaw22@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-4">
