@@ -1,4 +1,3 @@
-// app/blog/[slug]/page.js
 import NotionContent from './PostPageClient';
 import { getBlogPosts } from '../../../lib/notion';
 import { Client } from '@notionhq/client';
@@ -13,7 +12,7 @@ export async function generateStaticParams() {
 export default async function PostPage({ params }) {
   const posts = await getBlogPosts();
   const post = posts.find((p) => p.slug === params.slug);
-  if (!post) return notFound();
+  // if (!post) return notFound();
 
   const recordMap = await notion.blocks.children.list({
     block_id: post.id,
